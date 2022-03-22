@@ -1,0 +1,76 @@
+.expense-item-container {
+  background-color: #282828;
+  border-radius: 1rem;
+  width: 90%;
+  position: relative;
+  top: 5rem;
+  margin: 6rem auto;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+/* .header {
+  display: flex;
+  justify-content: space-between;
+} */
+.expense-item-date {
+  font-size: 3rem;
+  color: white;
+  flex-basis: 20%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+.expense-item-title {
+  font-size: 3rem;
+  color: white;
+  padding: 1rem;
+  flex-basis: 50%;
+  text-align: left;
+  border-radius: 1rem;
+  background-color: #621bcc;
+}
+.expense-item-amount {
+  font-size: 3rem;
+  color: white;
+  flex-basis: 20%;
+  text-align: left;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #621bcc;
+}
+.expense-item-date {
+  display: flex;
+  justify-content: space-between;
+}
+.expense-item-date-day {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #621bcc;
+}
+.expense-item-date-month {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #621bcc;
+}
+.expense-item-date-year {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #621bcc;
+}
+
+@media only screen and (max-width: 768px) {
+  .expense-item-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .expense-item-title,
+  .expense-item-date {
+    margin-bottom: 5rem;
+  }
+}

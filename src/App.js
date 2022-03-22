@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
+import './App.css'
+import ExpenseItem from './components/ExpenseItem';
+import ExpenseForm from './components/ExpenseForm';
+import Title from './components/Title';
 
-function App() {
+
+const App = () => {
+  let expenseList = [
+    {
+      date: new Date(),
+      title: "",
+      amount: ""
+    }
+  ];
+  const[newExpenseList, setExpenseList] = useState(expenseList);
+  const saveExpenseDataHandler = (enteredExpenseData) => {
+    const updatedExpenseList = [enteredExpenseData, ...expenseList];
+    setExpenseList(updatedExpenseList);
+  }
+ 
+  console.log(newExpenseList.length);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <Title/>
+      <ExpenseForm
+        onSaveExpenseData = {saveExpenseDataHandler}
+      />
+      {
+        
+        newExpenseList.map(
+          (expense) => (
+              <ExpenseItem
+              date = {expense.date}
+              title = {expense.title}
+              amount = {expense.amount}
+          />
+        )
+      )
+    }
     </div>
   );
 }
